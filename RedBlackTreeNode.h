@@ -1,6 +1,7 @@
 #pragma once
 #include "Vehicle.h"
 #include <string>
+#include <vector>
 
 struct RBNode {
 public:
