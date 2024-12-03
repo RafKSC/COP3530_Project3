@@ -122,14 +122,14 @@ Vehicle* BTree::search(const std::string& vin) {
     return searchHelper(root, vin);
 }
 
-void BTree::searchByAttributeHelper(BTreeNode* node, const std::string& attribute, const std::string& value, std::vector<Vehicle>& result) {
+void BTree::searchByAttributeHelper(BTreeNode* node, const string& attribute, const string& value, std::vector<Vehicle>& result) {
     if (node == nullptr) return;
 
     for (auto& vehicle : node->keys) {
         bool matches = false;
         if (attribute == "make") matches = vehicle.getMake() == value;
         else if (attribute == "model") matches = vehicle.getModel() == value;
-        else if (attribute == "year") matches = std::to_string(vehicle.getModelYear()) == value;
+        else if (attribute == "year") matches = to_string(vehicle.getModelYear()) == value;
         else if (attribute == "type") matches = vehicle.getEvType() == value;
 
         if (matches) result.push_back(vehicle);
@@ -141,7 +141,7 @@ void BTree::searchByAttributeHelper(BTreeNode* node, const std::string& attribut
     }
 }
 
-vector<Vehicle> BTree::searchByAttribute(const std::string& attribute, const std::string& value) {
+vector<Vehicle> BTree::searchByAttribute(const string& attribute, const string& value) {
     std::vector<Vehicle> result;
     searchByAttributeHelper(root, attribute, value, result);
     return result;
