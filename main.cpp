@@ -109,10 +109,6 @@ int main()
             cout << "4. Search by type" << endl;
 
             int searchChoice;
-            //string tempInput;
-
-            //getline(cin, tempInput);
-            // stringstream(tempInput) >> searchChoice;
             cin >> searchChoice;
 
             string attribute, value;
@@ -140,8 +136,6 @@ int main()
 
             cin.ignore();
             getline(cin, value);
-
-            //cin >> value;
 
             // Time RB-Tree search
             auto rbStart = chrono::high_resolution_clock::now();
@@ -198,7 +192,6 @@ int main()
             cout << "Deletion times:" << endl;
             cout << "Red-Black Tree: " << rbDeleteTime.count() << " microseconds" << endl;
             cout << "B-Tree: " << bDeleteTime.count() << " microseconds" << endl;
-
 
 
             // Remove from vector to keep it synchronized
